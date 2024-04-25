@@ -7,13 +7,13 @@
 </head>
 <body>
     hello world . this is response from API : 
-      <div id="room-container"></div>      
+      <div id="data-container"></div>      
 </body>
 <script>
-    let roomContainer = document.getElementById('room-container')
-    let getRoom = async ()=>{
-        let response = await fetch('http://localhost:8000/api/rooms/');
-        let rooms = await response.json()
+    let dataContainer = document.getElementById('data-container')
+    let fetchRoom = async ()=>{
+        let res = await fetch('http://localhost:8000/api/rooms/');
+        let rooms = await res.json()
         console.log(rooms.length)
         for(let i=0 ; rooms.length > i ; i++){
             let room = rooms[i];
@@ -21,9 +21,9 @@
             <div>
                <h3>room : ${room.name}</h3>
             </div>`
-            roomContainer.innerHTML += row
+            dataContainer.innerHTML += row
         }
     }
-    getRoom()
+    fetchRoom()
 </script>
 </html>

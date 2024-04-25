@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night coding website</title>
+</head>
+<body>
+    hello world . this is response from API : 
+      <div id="room-container"></div>      
+</body>
+<script>
+    let roomContainer = document.getElementById('room-container')
+    let getRoom = async ()=>{
+        let response = await fetch('http://localhost:8000/api/rooms/');
+        let rooms = await response.json()
+        console.log(rooms.length)
+        for(let i=0 ; rooms.length > i ; i++){
+            let room = rooms[i];
+            let row = `
+            <div>
+               <h3>room : ${room.name}</h3>
+            </div>`
+            roomContainer.innerHTML += row
+        }
+    }
+    getRoom()
+</script>
+</html>

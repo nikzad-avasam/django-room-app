@@ -1,2 +1,3 @@
-# django-room-app
-source code for django course ( room application )
+فایل های مورد نیاز برای تمرین دوره ی اموزش جنگو پایتون ---
+شامل فایل های تم و کدنویسی و ....
+

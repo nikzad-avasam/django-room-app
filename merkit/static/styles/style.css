@@ -3,10 +3,10 @@
 
 :root {
   --color-main: #007acc; /* Light blue */
-  --color-main-light: #b3ecff; /* Lighter blue */
+  --color-main-light: #1e87aa; /* Lighter blue */
   --color-dark: #f5f5f5; /* Light gray */
   --color-dark-medium: #e0e0e0; /* Medium gray */
-  --color-dark-light: #e7e7e7; /* Light gray */
+  --color-dark-light: #c0c0c0; /* Light gray */
   --color-light: #3f3f3f; /* Dark gray */
   --color-gray: #8b8b8b; /* Gray */
   --color-light-gray: #3a3a3a; /* Light Gray */

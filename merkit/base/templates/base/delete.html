@@ -5,6 +5,7 @@
             <div class="layout__box">
                 <div class="layout__boxHeader">
                     <div class="layout__boxTitle">
+                        <h3>تاییدیه</h3>
                         <a href="{{ request.META.HTTP_REFERER }}">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">
@@ -14,18 +15,18 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>Back</h3>
+                       
                     </div>
                 </div>
                 <div class="layout__body">
                     <form class="form" action="" method="POST">
                         {% csrf_token %}
                         <div class="form__group">
-                            <p>Are you sure you want to delete "{{obj}}"</p>
+                            <p>آیا مطمئن هستید که میخواهید "{{obj}}" را پاک کنید ؟‌</p>
                         </div>
 
                         <div class="for__group">
-                            <input class="btn btn--main" type="submit" value="Confirm" />
+                            <input class="btn btn--main" type="submit" value="بله" />
                         </div>
 
                     </form>

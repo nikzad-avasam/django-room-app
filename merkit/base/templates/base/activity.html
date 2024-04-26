@@ -31,7 +31,7 @@
               class="roomListRoom__author"
             >
               <div class="avatar avatar--small">
-                <img src="https://randomuser.me/api/portraits/men/20.jpg" />
+                <img src="{{ HTTP_HOST }}/{{request.user.profile_image}}" />
               </div>
               <p>
                 @{{message.user}}

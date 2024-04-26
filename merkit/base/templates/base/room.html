@@ -20,7 +20,7 @@
               ></path>
             </svg>
           </a>
-          <h3>Study Room</h3>
+          <h3>روم</h3>
         </div>
         {% if room.host == request.user %}
         <div class="room__topRight">
@@ -92,20 +92,17 @@
             <span>{{room.created | timesince }}</span>
           </div>
           <div class="room__hosted">
-            <p>Hosted By</p>
+            <p>سازنده روم : </p>
             <a href="{% url 'user-profile' room.host.id %}" class="room__author">
               <div class="avatar avatar--small">
-                <img src="https://randomuser.me/api/portraits/men/20.jpg" />
+                <img src="{{ HTTP_HOST }}/{{room.host.profile_image}}" />
               </div>
               <span>@{{room.host.username}}</span>
             </a>
           </div>
-          <!-- <div class="room__details">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi,
-            tenetur laudantium? Dicta repellendus rerum consectetur, voluptatem
-            repudiandae eum ea porro cupiditate provident nulla, deserunt, ab
-            ipsum corporis laboriosam deleniti molestias?
-          </div> -->
+          <div class="room__details">
+            {{room.description}}
+          </div>
           <span class="room__topics">{{room.topic}}</span>
         </div>
         <div class="room__conversation">
@@ -117,7 +114,7 @@
                   <a href="{% url 'user-profile' user.id %}" class="thread__authorInfo">
                     <div class="avatar avatar--small">
                       <img
-                        src="https://randomuser.me/api/portraits/men/20.jpg"
+                        src="{{ HTTP_HOST }}/{{message.user.profile_image}}"
                       />
                     </div>
                     <span>@{{message.user.username}}</span>
@@ -153,7 +150,7 @@
       <div class="room__message">
         <form action="" method="POST">
           {% csrf_token %}
-          <input name="body" placeholder="Write your message here..." />
+          <input name="body" placeholder="پیام خود را بنویسید" />
         </form>
       </div>
     </div>
@@ -161,12 +158,12 @@
 
     <!--   Start -->
     <div class="participants">
-      <h3 class="participants__top">Participants <span>({{participants.count}} Joined)</span></h3>
+      <h3 class="participants__top">مشارکت کنندگان <span>({{participants.count}} عضو)</span></h3>
       <div class="participants__list scroll">
         {% for user in participants %}
           <a href="{% url 'user-profile' user.id %}" class="participant">
             <div class="avatar avatar--medium">
-              <img src="https://randomuser.me/api/portraits/men/20.jpg" />
+              <img src="{{ HTTP_HOST }}/{{user.profile_image}}" />
             </div>
             <p>
               @{{user.username}}

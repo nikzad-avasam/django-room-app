@@ -6,10 +6,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.contrib.auth.forms import UserCreationForm
+from .forms import newUserCreationForm
 
 def registerPage(request):
-    form = UserCreationForm(request.POST)
+    form = newUserCreationForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             user = form.save(commit=False)
@@ -28,14 +28,14 @@ def loginPage(request):
         return redirect('home')
     
     if request.method == 'POST':
-        username = request.POST.get('username').lower()
+        email = request.POST.get('email').lower()
         password = request.POST.get('password')
         try:
-            user = User.objects.get(username=username)
+            user = User.objects.get(email=email)
         except:
             messages.error(request, "User not found.")
         
-        user = authenticate(request , username=username,password=password)
+        user = authenticate(request , email=email,password=password)
         if user is not None : 
             login(request , user)
             return redirect('home')
@@ -156,7 +156,7 @@ def updateUser(request):
     user = request.user
     form = UserForm(instance=user)
     if request.method == 'POST':
-        form = UserForm(request.POST,instance = user)
+        form = UserForm(request.POST,request.FILES,instance = user)
         if form.is_valid():
             form.save()
             return redirect('user-profile',pk=user.id)

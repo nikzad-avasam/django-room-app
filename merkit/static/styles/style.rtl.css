@@ -173,7 +173,7 @@ a {
   width: 0.7rem;
   height: 0.7rem;
   bottom: 0px;
-  right: -6px;
+  left: -6px;
 }
 
 .avatar.avatar--medium img {
@@ -186,7 +186,7 @@ a {
   width: 0.7rem;
   height: 0.7rem;
   bottom: 0px;
-  right: -6px;
+  left: -6px;
 }
 
 .avatar.avatar--large img {
@@ -200,7 +200,7 @@ a {
   width: 1rem;
   height: 1rem;
   bottom: 2px;
-  right: 3.5px;
+  left: 3.5px;
 }
 
 .scroll::-webkit-scrollbar {
@@ -217,7 +217,7 @@ a {
   z-index: 111;
   position: absolute;
   top: 5rem;
-  right: 0.5rem;
+  left: 0.5rem;
   background: var(--color-dark-light);
   border-radius: 5px;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
@@ -542,7 +542,7 @@ a {
 
 .form__hide {
   position: absolute;
-  left: -9999px;
+  right: -9999px;
 }
 
 .form__avatar label {
@@ -1068,7 +1068,7 @@ a {
 }
 
 .thread {
-  border-left: 2px solid var(--color-dark);
+  border-right: 2px solid var(--color-dark);
   padding-left: 1rem;
   margin: 2rem 0;
   padding: 2rem;
@@ -1107,8 +1107,8 @@ a {
   position: absolute;
   z-index: 111;
   bottom: 0;
-  left: 0;
   right: 0;
+  left: 0;
   background: transparent;
 }
 

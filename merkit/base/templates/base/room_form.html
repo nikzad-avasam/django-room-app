@@ -5,6 +5,9 @@
       <div class="layout__box">
         <div class="layout__boxHeader">
           <div class="layout__boxTitle">
+
+            <h3>ساخت / بروزرسانی روم </h3>
+
             <a href="{% url 'home' %}">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                 <title>arrow-left</title>
@@ -13,7 +16,6 @@
                 </path>
               </svg>
             </a>
-            <h3>Create/Update Room</h3>
           </div>
         </div>
         <div class="layout__body">
@@ -21,7 +23,7 @@
             {% csrf_token %}
             
             <div class="form__group">
-              <label for="id_description">Room topic</label>
+              <label for="id_description">تاپیک روم </label>
               <input type="text" name="topic" value="{{ room.topic.name}}" required list="topic-list">
               <datalist id="topic-list">
                 <select name="" id="room_topic">
@@ -32,11 +34,11 @@
               </datalist>
             </div>
             <div class="form__group">
-              <label for="id_name">Room name</label>
+              <label for="id_name">نام روم </label>
               {{form.name}}
             </div>
             <div class="form__group">
-              <label for="id_description">Room Description</label>
+              <label for="id_description">توضیحات روم </label>
               {{form.description}}
             </div>
            
@@ -45,8 +47,8 @@
               <textarea name="room_about" id="room_about" placeholder="Write about your study group..."></textarea>
             </div> -->
             <div class="form__action">
-              <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
-              <button class="btn btn--main" type="submit">Create/Updateo Room</button>
+              <a class="btn btn--dark" href="{% url 'home' %}">لغو</a>
+              <button class="btn btn--main" type="submit">ساخت/برورسانی روم</button>
             </div>
           </form>
         </div>

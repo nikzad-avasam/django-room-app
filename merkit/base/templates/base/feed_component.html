@@ -24,8 +24,8 @@
   </div>
   <div class="roomList__header">
     <div>
-      <h2>New Room</h2>
-      <p>{{rooms.count}} Rooms available</p>
+      <h2>روم های اخیر</h2>
+      <p>{{rooms.count}} روم موجود است</p>
     </div>
     <a class="btn btn--main" href="{% url 'create-room' %}">
       <svg
@@ -40,7 +40,7 @@
           d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
         ></path>
       </svg>
-      Create Room
+      ساخت روم جدید
     </a>
   </div>
   {% for room in rooms %}
@@ -48,7 +48,7 @@
       <div class="roomListRoom__header">
         <a href="{% url 'user-profile' room.host.id %}" class="roomListRoom__author">
           <div class="avatar avatar--small">
-            <img src="https://randomuser.me/api/portraits/men/20.jpg" />
+            <img src="{{ HTTP_HOST }}/{{room.host.profile_image}}" />
           </div>
           <span>@{{room.host.username}}</span>
         </a>

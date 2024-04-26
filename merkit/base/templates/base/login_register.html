@@ -8,20 +8,20 @@
         <div class="layout__box">
           <div class="layout__boxHeader">
             <div class="layout__boxTitle">
-              <h3>Login</h3>
+              <h3>ورود</h3>
             </div>
           </div>
           <div class="layout__body">
-            <h2 class="auth__tagline">Find your study partner</h2>
+            <h2 class="auth__tagline">برای یادگیری پارتنر خود را پیدا کنید</h2>
 
             <form class="form" action="" method="POST">
               {% csrf_token %}
               <div class="form__group form__group">
-                <label for="room_name">Username</label>
-                <input id="username" name="username" type="text" placeholder="e.g. merkit didi" />
+                <label for="room_name">ایمیل</label>
+                <input id="email" name="email" type="text" placeholder="e.g. merkit didi" />
               </div>
               <div class="form__group">
-                <label for="password">Password</label>
+                <label for="password">رمز</label>
                 <input
                   id="password"
                   name="password"
@@ -46,14 +46,13 @@
                     d="M15 21.694v4.306h2v-4.306c0.587-0.348 1-0.961 1-1.694 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.732 0.413 1.345 1 1.694z"
                   ></path>
                 </svg>
-
-                Login
+ورود
               </button>
             </form>
 
             <div class="auth__action">
-              <p>Haven't signed up yet?</p>
-              <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
+              <p>هنوز ثبت نام نکردید</p>
+              <a href="{% url 'register' %}" class="btn btn--link">ثبت نام</a>
             </div>
           </div>
         </div>
@@ -63,11 +62,11 @@
         <div class="layout__box">
           <div class="layout__boxHeader">
             <div class="layout__boxTitle">
-              <h3>Register</h3>
+              <h3>ثبت نام کاربر جدید</h3>
             </div>
           </div>
           <div class="layout__body">
-            <h2 class="auth__tagline">Singup and Find your study partner</h2>
+            <h2 class="auth__tagline">ثبت نام کنید و سوالات خود را بپرسید</h2>
 
             <form class="form" action="" method="POST">
               {% csrf_token %}
@@ -95,13 +94,13 @@
                   ></path>
                 </svg>
 
-                Register
+                ثبت نام
               </button>
             </form>
 
             <div class="auth__action">
-              <p>Did you signup before?</p>
-              <a href="{% url 'login' %}" class="btn btn--link">Login</a>
+              <p>قبلا ثبت نام کردید ؟ </p>
+              <a href="{% url 'login' %}" class="btn btn--link">ورود</a>
             </div>
           </div>
         </div>

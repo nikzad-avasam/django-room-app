@@ -18,22 +18,20 @@
             <h3>{{user.username}}</h3>
             <p>@{{user.username}}</p>
             {% if request.user == user %}
-              <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+              <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">ویرایش پروفایل</a>
             {% endif %}
           </div>
           <div class="profile__about">
-            <h3>About</h3>
+            <h3>درباره ی کاربر</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo tenetur
-              facilis sunt nemo debitis quisquam hic atque aut? Ducimus alias placeat optio
-              accusamus repudiandae quis ab ex exercitationem rem?
+             {{user.bio}}
             </p>
           </div>
         </div>
 
         <div class="roomList__header">
           <div>
-            <h2>Study Rooms Hosted by oktay nikzad</a>
+            <h2>روم های ساخته شده توسط این کاربر</a>
             </h2>
           </div>
         </div>
